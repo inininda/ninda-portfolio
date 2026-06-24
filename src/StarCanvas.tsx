@@ -93,21 +93,25 @@ export default function StarCanvas() {
     }
 
     console.log("called")
-    function resize() {
-      width = window.innerWidth
-      height = window.innerHeight
-      canvas!.width = width
-      canvas!.height = height
-      bgGrad = makeBgGrad()
-      topFadeGrad = makeTopFade()
-      botFadeGrad = makeBotFade()
-      for (const star of stars) {
-        if (star.x > width) star.x = Math.random() * width
-        if (star.y > height) star.y = Math.random() * height
-      }
-    }
+  function resize() {
+  const prevW = width;
+  const prevH = height;
 
-    window.addEventListener('resize', resize)
+  width = window.innerWidth;
+  height = window.innerHeight;
+  canvas!.width = width;
+  canvas!.height = height;
+  bgGrad = makeBgGrad();
+  topFadeGrad = makeTopFade();
+  botFadeGrad = makeBotFade();
+
+  for (const star of stars) {
+    star.x = (star.x / prevW) * width;
+    star.y = (star.y / prevH) * height;
+  }
+}
+
+window.addEventListener('resize', resize);
 
     function drawBackground() {
       ctx!.fillStyle = bgGrad
