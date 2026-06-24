@@ -62,9 +62,7 @@ export default function StarCanvas() {
     canvas.height = height
 
     const STAR_COUNT = 220
-    const stars: Star[] = Array.from({ length: STAR_COUNT }, () =>
-      createStar(width, height)
-    )
+    const stars: Star[] = Array.from({ length: STAR_COUNT }, () => createStar(width, height))
     const shootingStars: ShootingStar[] = []
     let frameId: number
     let tick = 0
@@ -92,26 +90,25 @@ export default function StarCanvas() {
       return g
     }
 
-    console.log("called")
-  function resize() {
-  const prevW = width;
-  const prevH = height;
+    function resize() {
+      const prevW = width
+      const prevH = height
 
-  width = window.innerWidth;
-  height = window.innerHeight;
-  canvas!.width = width;
-  canvas!.height = height;
-  bgGrad = makeBgGrad();
-  topFadeGrad = makeTopFade();
-  botFadeGrad = makeBotFade();
+      width = window.innerWidth
+      height = window.innerHeight
+      canvas!.width = width
+      canvas!.height = height
+      bgGrad = makeBgGrad()
+      topFadeGrad = makeTopFade()
+      botFadeGrad = makeBotFade()
 
-  for (const star of stars) {
-    star.x = (star.x / prevW) * width;
-    star.y = (star.y / prevH) * height;
-  }
-}
+      for (const star of stars) {
+        star.x = (star.x / prevW) * width
+        star.y = (star.y / prevH) * height
+      }
+    }
 
-window.addEventListener('resize', resize);
+    window.addEventListener('resize', resize)
 
     function drawBackground() {
       ctx!.fillStyle = bgGrad
@@ -119,15 +116,11 @@ window.addEventListener('resize', resize);
     }
 
     function drawStar(star: Star) {
-      const opacity =
-        star.baseOpacity * (0.7 + 0.3 * Math.sin(star.phase))
+      const opacity = star.baseOpacity * (0.7 + 0.3 * Math.sin(star.phase))
       ctx!.save()
 
       if (star.radius > 1.2) {
-        const glow = ctx!.createRadialGradient(
-          star.x, star.y, 0,
-          star.x, star.y, star.radius * 5
-        )
+        const glow = ctx!.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.radius * 5)
         glow.addColorStop(0, `rgba(180, 210, 255, ${opacity * 0.6})`)
         glow.addColorStop(1, 'rgba(0,0,0,0)')
         ctx!.beginPath()
