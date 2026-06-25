@@ -1,16 +1,34 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import StarCanvas from './StarCanvas'
+import Navbar from '@/components/layout/Navbar'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isDark, setIsDark] = useState(
+    () => window.matchMedia('(prefers-color-scheme: dark)').matches
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)')
+    function onSystemChange(e: MediaQueryListEvent) {
+      setIsDark(e.matches)
+    }
+    mq.addEventListener('change', onSystemChange)
+    return () => mq.removeEventListener('change', onSystemChange)
+  }, [])
+
+  function toggleTheme() {
+    setIsDark((prev) => !prev)
+  }
 
   return (
     <>
-      <StarCanvas />
+      <StarCanvas isDark={isDark} />
+      <Navbar isDark={isDark} onToggleTheme={toggleTheme} />
+
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
@@ -23,9 +41,6 @@ function App() {
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
         </div>
-        <button type="button" className="counter" onClick={() => setCount((count) => count + 1)}>
-          Count is {count}
-        </button>
       </section>
 
       <div className="ticks"></div>
@@ -73,22 +88,6 @@ function App() {
                   <use href="/icons.svg#discord-icon"></use>
                 </svg>
                 Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
               </a>
             </li>
           </ul>

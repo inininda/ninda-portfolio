@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 interface Star {
   x: number
@@ -83,30 +83,19 @@ function spawnShootingStar(canvasWidth: number, canvasHeight: number): ShootingS
   }
 }
 
-export default function StarCanvas() {
+interface StarCanvasProps {
+  isDark: boolean
+}
+
+export default function StarCanvas({ isDark }: StarCanvasProps) {
   'use no memo'
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const themeRef = useRef<Theme>(
-    window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK_THEME : LIGHT_THEME
-  )
-  const [isDark, setIsDark] = useState(themeRef.current.dark)
+  const themeRef = useRef<Theme>(isDark ? DARK_THEME : LIGHT_THEME)
 
-  function toggleTheme() {
-    const next = themeRef.current.dark ? LIGHT_THEME : DARK_THEME
-    themeRef.current = next
-    setIsDark(next.dark)
-  }
-
+  // Sync themeRef when isDark prop changes
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)')
-    function onSystemChange(e: MediaQueryListEvent) {
-      const next = e.matches ? DARK_THEME : LIGHT_THEME
-      themeRef.current = next
-      setIsDark(next.dark)
-    }
-    mq.addEventListener('change', onSystemChange)
-    return () => mq.removeEventListener('change', onSystemChange)
-  }, [])
+    themeRef.current = isDark ? DARK_THEME : LIGHT_THEME
+  }, [isDark])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -176,7 +165,6 @@ export default function StarCanvas() {
 
     window.addEventListener('resize', resize)
 
-    // Rebuild gradients when theme changes (themeRef is a ref so no dep array issue)
     let lastTheme = themeRef.current
     function checkThemeChange() {
       if (themeRef.current !== lastTheme) {
@@ -294,40 +282,16 @@ export default function StarCanvas() {
   }, [])
 
   return (
-    <>
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: 'fixed',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1,
-          display: 'block',
-        }}
-      />
-      <button
-        onClick={toggleTheme}
-        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-        style={{
-          position: 'fixed',
-          top: '1rem',
-          right: '1rem',
-          zIndex: 100,
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          fontSize: '1.5rem',
-          lineHeight: 1,
-          padding: '0.25rem',
-          opacity: 0.8,
-          transition: 'opacity 0.2s',
-        }}
-        onMouseEnter={(e) => ((e.currentTarget as HTMLButtonElement).style.opacity = '1')}
-        onMouseLeave={(e) => ((e.currentTarget as HTMLButtonElement).style.opacity = '0.8')}
-      >
-        {isDark ? '☀️' : '🌙'}
-      </button>
-    </>
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: -1,
+        display: 'block',
+      }}
+    />
   )
 }
