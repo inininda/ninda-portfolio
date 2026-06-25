@@ -25,8 +25,7 @@ const terminalLines: TerminalLine[] = [
   { type: 'out', text: 'ninda_mawarni' },
   { type: 'gap' },
   { type: 'cmd', text: 'get_status --current' },
-  { type: 'kv', key: 'role  ', val: '"Frontend Developer"' },
-  { type: 'kv', key: 'stack ', val: '["React", "TypeScript", "Tailwind"]' },
+  { type: 'kv', key: 'role  ', val: '"Fullstack Web3 & AI Engineer"' },
   { type: 'kv', key: 'status', val: '"Open to opportunities"' },
   { type: 'kv', key: 'based ', val: '"Indonesia"' },
 ]
