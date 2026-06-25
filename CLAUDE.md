@@ -263,8 +263,7 @@ src/components/sections/
 └── HeroSection/
     ├── index.tsx           # main HeroSection component
     ├── HeroName.tsx
-    ├── HeroTagline.tsx
-    └── RotatingCircle.tsx
+    └── HeroTagline.tsx
 ```
 
 - If the child **could be reused** across sections or pages → move it to `src/components/ui/`
