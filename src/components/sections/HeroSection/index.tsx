@@ -6,6 +6,8 @@ import Container from '@/components/layout/Container'
 import Button from '@/components/ui/Button'
 import TerminalWindow from '@/components/ui/TerminalWindow'
 import SocialIconLink from '@/components/ui/SocialIconLink'
+import HeroName from './HeroName'
+import HeroTagline from './HeroTagline'
 
 interface HeroSectionProps {
   isDark: boolean
@@ -35,9 +37,6 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
   const leftItem = shouldReduce ? {} : fadeInUp
 
   const mutedText = isDark ? 'text-white/40' : 'text-stone-400'
-  const bodyText = isDark ? 'text-white/60' : 'text-stone-500'
-  const headingPrimary = isDark ? 'text-white' : 'text-stone-900'
-  const headingMuted = isDark ? 'text-white/30' : 'text-stone-300'
 
   return (
     <section id="home" className="relative min-h-screen flex items-center">
@@ -51,7 +50,6 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
             animate="visible"
             className="flex flex-col"
           >
-            {/* Eyebrow */}
             <motion.p
               variants={leftItem}
               className={cn('text-xs font-mono tracking-[0.2em] uppercase mb-8', mutedText)}
@@ -59,36 +57,11 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
               // portfolio.v2025
             </motion.p>
 
-            {/* Name — mixed typography */}
-            <motion.h1
-              variants={leftItem}
-              className="leading-none mb-8 tracking-tight"
-            >
-              <span
-                className={cn(
-                  'block text-6xl sm:text-7xl lg:text-8xl font-extralight italic',
-                  headingMuted
-                )}
-              >
-                Ninda
-              </span>
-              <span
-                className={cn(
-                  'block text-6xl sm:text-7xl lg:text-8xl font-black not-italic',
-                  headingPrimary
-                )}
-              >
-                Mawarni.
-              </span>
-            </motion.h1>
+            <HeroName isDark={isDark} variants={leftItem} />
 
-            {/* Tagline */}
-            <motion.p
-              variants={leftItem}
-              className={cn('text-base sm:text-lg leading-relaxed max-w-sm', bodyText)}
-            >
+            <HeroTagline isDark={isDark} variants={leftItem}>
               Crafting clean, animated interfaces at the intersection of design and engineering.
-            </motion.p>
+            </HeroTagline>
           </motion.div>
 
           {/* ── Right column ── */}
@@ -98,7 +71,6 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
             animate="visible"
             className="flex flex-col gap-6"
           >
-            {/* Terminal */}
             <motion.div variants={shouldReduce ? {} : fadeIn}>
               <TerminalWindow>
                 {terminalLines.map((line, i) => (
@@ -130,7 +102,6 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
                   </motion.div>
                 ))}
 
-                {/* Blinking cursor */}
                 <motion.div
                   initial={shouldReduce ? {} : { opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -143,7 +114,6 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
               </TerminalWindow>
             </motion.div>
 
-            {/* CTA buttons */}
             <motion.div
               variants={shouldReduce ? {} : fadeInUp}
               className="flex flex-wrap gap-3"
@@ -157,7 +127,6 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
               </Button>
             </motion.div>
 
-            {/* Social icons */}
             <motion.div
               variants={shouldReduce ? {} : fadeInUp}
               className="flex items-center gap-4"
