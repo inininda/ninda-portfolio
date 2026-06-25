@@ -228,6 +228,35 @@ const SectionWrapper = ({ as: Tag = "section", children, className }: SectionWra
 
 **Extract when you see it twice.** If the same markup pattern appears in two places, extract it immediately. Three instances with no extraction is a bug.
 
+### Component Decomposition
+
+**Split large components into smaller child components.** A component that does more than one visual job should be broken down. If you find yourself scrolling past 150 lines inside a single component function, that is a signal to decompose.
+
+**The rule:** One component = one responsibility. A `HeroSection` should orchestrate layout — not contain all the markup for a rotating circle, a button group, and a social links row inline. Each of those is a child component.
+
+```
+// ✅ Decomposed — each child has one job
+HeroSection.tsx
+├── HeroEyebrow.tsx        → eyebrow label
+├── HeroName.tsx           → mixed-typography name block
+├── HeroTagline.tsx        → tagline text
+├── RotatingCircle.tsx     → spinning circular text (reusable in other sections)
+├── SocialLinks.tsx        → icon row (reusable in Footer too)
+└── (Button from ui/)      → CTA buttons
+
+// ❌ Monolith — one file doing everything
+HeroSection.tsx            → 300+ lines, all markup inline
+```
+
+**Where to place child components:**
+- If the child is **specific to one section** and won't be used elsewhere → co-locate it in `src/components/sections/` (e.g. `HeroName.tsx` next to `HeroSection.tsx`)
+- If the child **could be reused** across sections or pages → move it to `src/components/ui/`
+
+**Ask before writing markup inline:**
+1. Is this block more than ~20 lines of JSX? → extract it
+2. Does it have its own internal state or animation logic? → extract it
+3. Could another section use this with different props? → extract to `ui/`
+
 ### Comments
 - Add comments **only when necessary** — complex logic, non-obvious decisions, workarounds.
 - Use `//` for single-line, `/* */` for multi-line.
