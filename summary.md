@@ -14,6 +14,13 @@ _Last updated: 2026-06-25_
 ## Components / Sections
 
 - `HeroSection` — Two-column hero: mixed-typography name left, terminal + CTAs + social icons right; accepts `isDark`, `onViewWork`
+- `AboutSection` — Single-column about: heading → mission log → work history → skills grid → metrics row; accepts `isDark`
+- `JourneyLog` — Stagger-animated timeline container; accepts `JourneyEntry[]` and `isDark`
+- `JourneyEntry` — Single mission log entry with vertical spine, mono year+code, title, and description
+- `WorkHistory` — Stagger-animated work experience list with `// work.history` mono header; accepts `WorkExperience[]` and `isDark`
+- `WorkExperienceCard` — Single work entry: period + location mono, role title, company in sky-400, `↳` highlight bullets
+- `AboutSkills` — Tech stack grid grouped by `SkillGroup` (fullstack / web3 / devops); accepts `Skill[]` and `isDark`; uses `Badge`
+- `AboutMetrics` — Stagger-animated metric row; accepts `Metric[]` and `isDark`; uses `StatCard` with `animated` counter
 
 ## Components / UI
 
@@ -22,6 +29,8 @@ _Last updated: 2026-06-25_
 - `TerminalWindow` — macOS-style terminal chrome (dots, title bar, dark wrapper); children-based
 - `SocialIcon` — SVG icon renderer keyed by `SocialLink['icon']` name
 - `SocialIconLink` — Themed anchor wrapping `SocialIcon`; accepts full `SocialLink` shape
+- `StatCard` — Stat display with large value + label; optional `animated` prop triggers count-up on scroll enter via `useInView`
+- `Badge` — Pill label for tags/skills; accepts `label`, `isDark`
 
 ## Hooks
 
@@ -31,6 +40,7 @@ _Last updated: 2026-06-25_
 
 - `navData.ts` — Navigation menu items (`label`, `href`)
 - `socialData.ts` — Social links (`label`, `href`, `icon`) for hero and footer
+- `aboutData.ts` — Journey entries (`JourneyEntry[]`), work experience (`WorkExperience[]`), metrics (`Metric[]`), and tech stack skills (`Skill[]`) for the About section
 
 ## Lib
 
