@@ -3,6 +3,7 @@ import StarCanvas from './StarCanvas'
 import Navbar from '@/components/layout/Navbar'
 import HeroSection from '@/components/sections/HeroSection'
 import AboutSection from '@/components/sections/AboutSection'
+import SkillsSection from '@/components/sections/SkillsSection'
 import './App.css'
 
 function App() {
@@ -44,8 +45,9 @@ function App() {
 
         <AboutSection isDark={isDark} />
 
+        <SkillsSection isDark={isDark} />
+
         {/* Placeholder sections — to be built out */}
-        <section id="skills" className="min-h-screen" />
         <section id="works" className="min-h-screen" />
         <section id="contact" className="min-h-screen" />
       </main>
