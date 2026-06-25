@@ -249,7 +249,24 @@ HeroSection.tsx            → 300+ lines, all markup inline
 ```
 
 **Where to place child components:**
-- If the child is **specific to one section** and won't be used elsewhere → co-locate it in `src/components/sections/` (e.g. `HeroName.tsx` next to `HeroSection.tsx`)
+- If the child is **specific to one component** and won't be used elsewhere → co-locate it inside a folder named after the parent component. The parent becomes `index.tsx` inside that folder:
+
+```
+src/components/layout/
+└── Navbar/
+    ├── index.tsx           # main Navbar component (orchestrator)
+    ├── NavLinks.tsx        # desktop nav links
+    ├── HamburgerButton.tsx
+    └── NavSidebar.tsx
+
+src/components/sections/
+└── HeroSection/
+    ├── index.tsx           # main HeroSection component
+    ├── HeroName.tsx
+    ├── HeroTagline.tsx
+    └── RotatingCircle.tsx
+```
+
 - If the child **could be reused** across sections or pages → move it to `src/components/ui/`
 
 **Ask before writing markup inline:**
