@@ -1,4 +1,4 @@
-# CLAUDE.md — Qrite Frontend
+# CLAUDE.md
 
 This file is the source of truth for how Claude should behave when working on this codebase.
 
