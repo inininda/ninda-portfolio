@@ -51,7 +51,7 @@ export default function SkillsSection({ isDark = true }: SkillsSectionProps) {
               variants={item}
               className="text-3xl font-bold tracking-tight sm:text-4xl"
             >
-              <span className={isDark ? 'text-white' : 'text-stone-900'}>System </span>
+              <span className={isDark ? 'text-white' : 'text-stone-700'}>System </span>
               <span className="bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
                 Diagnostics
               </span>

@@ -42,7 +42,7 @@ export default function ProjectsSection({ isDark = true }: ProjectsSectionProps)
             variants={item}
             className="text-3xl font-bold tracking-tight sm:text-4xl"
           >
-            <span className={isDark ? 'text-white' : 'text-stone-900'}>Project </span>
+            <span className={isDark ? 'text-white' : 'text-stone-700'}>Project </span>
             <span className="bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
               Archive
             </span>

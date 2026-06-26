@@ -12,7 +12,7 @@ export default function SearchingEntry({ entry, isDark }: SearchingEntryProps) {
     ? 'bg-cyan-950/10 border-cyan-400/25'
     : 'bg-cyan-50 border-cyan-400/40'
   const labelColor = isDark ? 'text-cyan-400/70' : 'text-cyan-600/80'
-  const roleColor = isDark ? 'text-white' : 'text-stone-900'
+  const roleColor = isDark ? 'text-white' : 'text-stone-700'
   const broadcastColor = isDark ? 'text-white/50' : 'text-stone-400'
   const responsibilityColor = isDark ? 'text-white/50' : 'text-stone-500'
   const bulletColor = isDark ? 'text-cyan-400/50' : 'text-cyan-500/70'

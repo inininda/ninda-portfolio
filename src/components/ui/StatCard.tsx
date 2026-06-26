@@ -43,7 +43,7 @@ export default function StatCard({
       <span
         className={cn(
           'text-3xl font-bold tracking-tight tabular-nums',
-          isDark ? 'text-white' : 'text-stone-900',
+          isDark ? 'text-white' : 'text-stone-700',
         )}
       >
         {display}

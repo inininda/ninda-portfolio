@@ -19,7 +19,7 @@ export default function SocialIconLink({ social, isDark = true, className }: Soc
       aria-label={social.label}
       className={cn(
         'transition-all duration-200 hover:scale-110',
-        isDark ? 'text-white/50 hover:text-white' : 'text-stone-400 hover:text-stone-900',
+        isDark ? 'text-white/50 hover:text-white' : 'text-stone-400 hover:text-stone-700',
         className
       )}
     >

@@ -41,10 +41,10 @@ function SidebarNavLinks({ isDark, activeHref, onNavClick }: SidebarNavLinksProp
             activeHref === item.href
               ? isDark
                 ? 'text-white'
-                : 'text-stone-900'
+                : 'text-stone-700'
               : isDark
                 ? 'text-white/60 hover:text-white'
-                : 'text-stone-500 hover:text-stone-900'
+                : 'text-stone-500 hover:text-stone-700'
           )}
         >
           {item.label}
@@ -63,7 +63,7 @@ export default function NavSidebar({
   onToggleTheme,
 }: NavSidebarProps) {
   const shouldReduce = useReducedMotion()
-  const logoColor = isDark ? 'text-white' : 'text-stone-900'
+  const logoColor = isDark ? 'text-white' : 'text-stone-700'
 
   return (
     <AnimatePresence>

@@ -134,7 +134,7 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
                 <SocialIconLink key={social.icon} social={social} isDark={isDark} />
               ))}
 
-              <span className={cn('ml-1 text-xs', isDark ? 'text-white/50' : 'text-stone-300')}>
+              <span className={cn('ml-1 text-xs', isDark ? 'text-white/50' : 'text-zinc-400')}>
                 —
               </span>
               <span className={cn('text-xs font-mono', isDark ? 'text-white/50' : 'text-stone-400')}>

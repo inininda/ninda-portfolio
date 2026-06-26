@@ -8,8 +8,8 @@ interface HeroNameProps {
 }
 
 export default function HeroName({ isDark, variants }: HeroNameProps) {
-  const headingPrimary = isDark ? 'text-white' : 'text-stone-900'
-  const headingMuted = isDark ? 'text-white/50' : 'text-stone-300'
+  const headingPrimary = isDark ? 'text-white' : 'text-stone-700'
+  const headingMuted = isDark ? 'text-white/50' : 'text-zinc-400'
 
   return (
     <motion.h1 variants={variants} className="leading-none mb-8 tracking-tight">

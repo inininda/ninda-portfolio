@@ -13,7 +13,7 @@ interface ExperienceTimelineProps {
 
 const spineColor = {
   dark: 'border-white/10',
-  light: 'border-stone-200',
+  light: 'border-zinc-300',
 }
 
 const dotActive = {

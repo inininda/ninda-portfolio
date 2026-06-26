@@ -55,7 +55,7 @@ export default function Navbar({ isDark, onToggleTheme, activeHref, onSetActive 
     setIsSidebarOpen(false)
   }
 
-  const logoColor = isDark ? 'text-white' : 'text-stone-900'
+  const logoColor = isDark ? 'text-white' : 'text-stone-700'
 
   return (
     <>

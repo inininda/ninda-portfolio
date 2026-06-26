@@ -30,7 +30,7 @@ export default function ProjectPlane({ project, index, isDark = true }: ProjectP
 
   const cardBg = isDark ? 'bg-neutral-900/90 border-blue-900/40' : 'bg-stone-100 border-stone-300'
   const indexColor = isDark ? 'text-white/50' : 'text-stone-400'
-  const initialsColor = isDark ? 'text-white/50' : 'text-stone-300'
+  const initialsColor = isDark ? 'text-white/50' : 'text-zinc-400'
 
   return (
     <>

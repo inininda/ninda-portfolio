@@ -44,7 +44,7 @@ export default function AboutSection({ isDark = true }: AboutSectionProps) {
               variants={item}
               className="text-3xl font-bold tracking-tight sm:text-4xl"
             >
-              <span className={isDark ? 'text-white' : 'text-stone-900'}>About </span>
+              <span className={isDark ? 'text-white' : 'text-stone-700'}>About </span>
               <span className="bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
                 Me
               </span>

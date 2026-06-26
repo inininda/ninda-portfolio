@@ -41,8 +41,8 @@ export default function ContactSection({ isDark = true }: ContactSectionProps) {
               variants={item}
               className="text-3xl font-bold tracking-tight sm:text-4xl"
             >
-              <span className={isDark ? 'text-white' : 'text-stone-900'}>Let&apos;s </span>
-              <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
+              <span className={isDark ? 'text-white' : 'text-stone-700'}>Let&apos;s </span>
+              <span className="bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
                 Connect
               </span>
             </motion.h2>

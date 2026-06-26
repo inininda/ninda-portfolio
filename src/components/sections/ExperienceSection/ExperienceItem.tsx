@@ -8,11 +8,11 @@ interface ExperienceItemProps {
 }
 
 export default function ExperienceItem({ entry, isDark }: ExperienceItemProps) {
-  const roleColor = isDark ? 'text-white' : 'text-stone-900'
+  const roleColor = isDark ? 'text-white' : 'text-stone-700'
   const companyColor = isDark ? 'text-cyan-400 hover:text-cyan-300' : 'text-cyan-600 hover:text-cyan-700'
   const locationColor = isDark ? 'text-white/50' : 'text-stone-400'
   const responsibilityColor = isDark ? 'text-white/50' : 'text-stone-500'
-  const bulletColor = isDark ? 'text-white/50' : 'text-stone-300'
+  const bulletColor = isDark ? 'text-white/50' : 'text-zinc-400'
 
   return (
     <div className="flex flex-col gap-3">

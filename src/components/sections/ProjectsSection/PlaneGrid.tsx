@@ -208,7 +208,7 @@ export default function PlaneGrid({ projects, onSelectProject, isDark = true }: 
   const wrapperBorder = isDark ? 'border-white/10' : 'border-stone-200'
   const hudBorder = isDark ? 'border-white/5' : 'border-stone-100'
   const hudText = isDark ? 'text-white/50' : 'text-stone-400'
-  const scrollHint = isDark ? 'text-white/50' : 'text-stone-300'
+  const scrollHint = isDark ? 'text-white/50' : 'text-zinc-400'
 
   function handleDragEnd(_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) {
     if (Math.abs(info.offset.x) > 8) {
