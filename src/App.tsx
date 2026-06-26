@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { motion, useTransform } from 'motion/react'
 import StarCanvas from './StarCanvas'
 import Navbar from '@/components/layout/Navbar'
 import HeroSection from '@/components/sections/HeroSection'
@@ -8,6 +9,7 @@ import ProjectsSection from '@/components/sections/ProjectsSection'
 import ExperienceSection from '@/components/sections/ExperienceSection'
 import ContactSection from '@/components/sections/ContactSection'
 import Footer from '@/components/layout/Footer'
+import { useSmoothScroll } from '@/hooks/useSmoothScroll'
 import './App.css'
 
 function App() {
@@ -15,6 +17,11 @@ function App() {
     () => window.matchMedia('(prefers-color-scheme: dark)').matches
   )
   const [activeHref, setActiveHref] = useState('#home')
+  const [contentHeight, setContentHeight] = useState(0)
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  const smoothY = useSmoothScroll()
+  const y = useTransform(smoothY, (v) => -v)
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)')
@@ -23,6 +30,15 @@ function App() {
     }
     mq.addEventListener('change', onSystemChange)
     return () => mq.removeEventListener('change', onSystemChange)
+  }, [])
+
+  useEffect(() => {
+    if (!contentRef.current) return
+    const ro = new ResizeObserver(() => {
+      setContentHeight(contentRef.current?.scrollHeight ?? 0)
+    })
+    ro.observe(contentRef.current)
+    return () => ro.disconnect()
   }, [])
 
   function toggleTheme() {
@@ -36,7 +52,14 @@ function App() {
 
   return (
     <>
+      {/* StarCanvas must live outside the motion.div — a CSS transform on an
+          ancestor creates a new containing block, breaking position:fixed */}
       <StarCanvas isDark={isDark} />
+
+      {/* Spacer that drives the native scrollbar height */}
+      <div style={{ height: contentHeight }} aria-hidden="true" />
+
+      {/* Navbar must also live outside — same containing-block issue as StarCanvas */}
       <Navbar
         isDark={isDark}
         onToggleTheme={toggleTheme}
@@ -44,21 +67,34 @@ function App() {
         onSetActive={setActiveHref}
       />
 
-      <main>
-        <HeroSection isDark={isDark} onViewWork={handleViewWork} />
+      {/* Fixed content panel translated by spring-smoothed scroll value */}
+      <motion.div
+        ref={contentRef}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          y,
+        }}
+      >
 
-        <AboutSection isDark={isDark} />
+        <main>
+          <HeroSection isDark={isDark} onViewWork={handleViewWork} />
 
-        <SkillsSection isDark={isDark} />
+          <AboutSection isDark={isDark} />
 
-        <ProjectsSection isDark={isDark} />
+          <SkillsSection isDark={isDark} />
 
-        <ExperienceSection isDark={isDark} />
+          <ProjectsSection isDark={isDark} />
 
-        <ContactSection isDark={isDark} />
-      </main>
+          <ExperienceSection isDark={isDark} />
 
-      <Footer isDark={isDark} activeHref={activeHref} onNavClick={setActiveHref} />
+          <ContactSection isDark={isDark} />
+        </main>
+
+        <Footer isDark={isDark} activeHref={activeHref} onNavClick={setActiveHref} />
+      </motion.div>
     </>
   )
 }

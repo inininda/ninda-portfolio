@@ -1,6 +1,6 @@
 # Portfolio — Module Summary
 
-_Last updated: 2026-06-26 — added ContactSection and Footer_
+_Last updated: 2026-06-26 — added smooth scroll_
 
 ## Components / Layout
 
@@ -51,6 +51,7 @@ _Last updated: 2026-06-26 — added ContactSection and Footer_
 ## Hooks
 
 - `useActiveSection` — Watches section hrefs via `IntersectionObserver`; returns the currently active href string
+- `useSmoothScroll` — Returns a spring-animated `MotionValue` tracking `scrollY`; used in `App.tsx` to drive the fixed content panel via `translateY`. Respects `useReducedMotion` (effectively instant spring when true)
 
 ## Data
 

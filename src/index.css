@@ -64,6 +64,15 @@
   min-height: 100svh;
 }
 
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
