@@ -6,6 +6,8 @@ import AboutSection from '@/components/sections/AboutSection'
 import SkillsSection from '@/components/sections/SkillsSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
 import ExperienceSection from '@/components/sections/ExperienceSection'
+import ContactSection from '@/components/sections/ContactSection'
+import Footer from '@/components/layout/Footer'
 import './App.css'
 
 function App() {
@@ -53,9 +55,10 @@ function App() {
 
         <ExperienceSection isDark={isDark} />
 
-        {/* Placeholder sections — to be built out */}
-        <section id="contact" className="min-h-screen" />
+        <ContactSection isDark={isDark} />
       </main>
+
+      <Footer isDark={isDark} activeHref={activeHref} onNavClick={setActiveHref} />
     </>
   )
 }

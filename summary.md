@@ -1,11 +1,12 @@
 # Portfolio — Module Summary
 
-_Last updated: 2026-06-26 — added ExperienceSection_
+_Last updated: 2026-06-26 — added ContactSection and Footer_
 
 ## Components / Layout
 
 - `Navbar` — Orchestrator: owns scroll/sidebar state, syncs `useActiveSection` to App, composes all nav children
 - `Container` — Responsive centered wrapper (`max-w-7xl`, horizontal padding); required around all page content
+- `Footer` — Minimal mission-control sign-off: logo+tagline left, nav links+socials right on desktop; stacked on mobile; copyright bar; `fadeIn` whileInView
 - `NavLinks` — Desktop nav links with animated underline; accepts `activeHref`, `isDark`, `onNavClick`
 - `HamburgerButton` — Three-bar mobile menu trigger; accepts `isDark`, `onClick`
 - `NavSidebar` — Mobile sidebar: overlay + slide-in panel + header + nav links + theme toggle; accepts `isOpen`, `isDark`, `activeHref`, `onClose`, `onNavClick`, `onToggleTheme`
@@ -27,6 +28,7 @@ _Last updated: 2026-06-26 — added ExperienceSection_
 - `ProjectPlane` — Pure visual component: 320×384 portrait card with `bg-neutral-900/90` dark panel, index label, status dot, image or oversized mono initials. No click handler or motion wrapper — those live on the `PlaneCard` ancestor. Hover label (`group-hover`) appears to the right via `left-full` absolute positioning, relying on `group` from `PlaneCard`.
 - `ProjectModal` — Full detail modal: name, status badge, description, tech stack pills, asset gallery, demo/repo links; uses `Modal` shell
 - `ExperienceSection` — Mission-log work history: themed heading + vertical timeline; accepts `isDark`
+- `ContactSection` — "Open comms channel" contact section: centered heading, email link, social links row; accepts `isDark`
 - `ExperienceTimeline` — Animated spine (`scaleY` on scroll) + stagger-mapped entries; routes to `SearchingEntry` or `ExperienceItem` per entry
 - `ExperienceItem` — Completed mission card: role, `@company` link, location, `Badge` stack pills, `>` prefixed responsibilities
 - `SearchingEntry` — Active signal card: dashed border, blinking cursor, pulsing dot, broadcasting message, open-to-work responsibilities
@@ -41,6 +43,7 @@ _Last updated: 2026-06-26 — added ExperienceSection_
 - `TerminalWindow` — macOS-style terminal chrome (dots, title bar, dark wrapper); children-based
 - `SocialIcon` — SVG icon renderer keyed by `SocialLink['icon']` name
 - `SocialIconLink` — Themed anchor wrapping `SocialIcon`; accepts full `SocialLink` shape
+- `SocialLinks` — Row of `SocialIconLink` items; accepts `SocialLink[]`, `isDark`; reused in ContactSection and Footer
 - `StatCard` — Stat display with large value + label; optional `animated` prop triggers count-up on scroll enter via `useInView`
 - `Badge` — Pill label for tags/skills; accepts `label`, `isDark`
 - `SkillBar` — Skill diagnostic row: mono name, segmented neon bar (repeating-linear-gradient), count-up %; group-keyed colors; `animated` via `useInView`
@@ -57,6 +60,7 @@ _Last updated: 2026-06-26 — added ExperienceSection_
 - `skillsData.ts` — Skill entries (`Skill[]` from `types/skills`) with proficiency values for the Skills section
 - `projectsData.ts` — 9 project entries (`Project[]`) with id, name, description, category, techStack, status, optional urls and assets
 - `experienceData.ts` — 5 work experience entries (`Experience[]`) ordered newest first; first entry is the "searching" signal
+- `contactData.ts` — `contactInfo: ContactInfo` with email, availability note, and socials array (sourced from `socialData`)
 
 ## Lib
 
