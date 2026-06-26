@@ -26,7 +26,7 @@ export default function SkillGroup({
   isDark = true,
   className,
 }: SkillGroupProps) {
-  const mutedText = isDark ? 'text-white/25' : 'text-stone-400'
+  const mutedText = isDark ? 'text-white/50' : 'text-stone-400'
   const divider = isDark ? 'border-white/10' : 'border-stone-200'
 
   return (

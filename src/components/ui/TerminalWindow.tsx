@@ -19,7 +19,7 @@ export default function TerminalWindow({ children, title = 'terminal', className
         <span className="w-3 h-3 rounded-full bg-red-500/80" />
         <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
         <span className="w-3 h-3 rounded-full bg-green-500/80" />
-        <span className="ml-2 text-xs text-white/30">{title}</span>
+        <span className="ml-2 text-xs text-white/50">{title}</span>
       </div>
 
       {/* Content */}

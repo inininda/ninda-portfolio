@@ -44,7 +44,7 @@ export default function AboutSkills({ skills, isDark = true, className }: AboutS
           <span
             className={cn(
               'font-mono text-xs uppercase tracking-widest',
-              isDark ? 'text-white/30' : 'text-stone-400',
+              isDark ? 'text-white/50' : 'text-stone-400',
             )}
           >
             // {GROUP_LABELS[group]}

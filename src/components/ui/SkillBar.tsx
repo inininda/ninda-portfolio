@@ -78,7 +78,7 @@ export default function SkillBar({ name, proficiency, group, isDark = true, clas
       <span
         className={cn(
           'w-8 shrink-0 text-right font-mono text-xs tabular-nums',
-          isDark ? 'text-white/30' : 'text-stone-400',
+          isDark ? 'text-white/50' : 'text-stone-400',
         )}
       >
         {count}%

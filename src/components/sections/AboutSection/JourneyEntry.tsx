@@ -16,7 +16,7 @@ export default function JourneyEntry({
   isDark = true,
   isLast = false,
 }: JourneyEntryProps) {
-  const mutedText = isDark ? 'text-white/30' : 'text-stone-400'
+  const mutedText = isDark ? 'text-white/50' : 'text-stone-400'
   const bodyText = isDark ? 'text-white/60' : 'text-stone-500'
   const titleText = isDark ? 'text-white' : 'text-stone-900'
   const dotBg = isDark ? 'bg-cyan-400' : 'bg-cyan-500'

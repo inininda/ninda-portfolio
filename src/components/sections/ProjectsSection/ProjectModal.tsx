@@ -14,9 +14,9 @@ export default function ProjectModal({ project, onClose, isDark = true }: Projec
   const headingText = isDark ? 'text-white' : 'text-stone-900'
   const bodyText = isDark ? 'text-white/60' : 'text-stone-600'
   const divider = isDark ? 'border-white/10' : 'border-stone-200'
-  const labelText = isDark ? 'text-white/30' : 'text-stone-400'
+  const labelText = isDark ? 'text-white/50' : 'text-stone-400'
   const closeBtnColor = isDark
-    ? 'text-white/40 hover:text-white hover:bg-white/10'
+    ? 'text-white/50 hover:text-white hover:bg-white/10'
     : 'text-stone-400 hover:text-stone-900 hover:bg-stone-100'
   const demoLinkColor = isDark ? 'text-cyan-400 hover:text-cyan-300' : 'text-cyan-600 hover:text-cyan-700'
   const repoLinkColor = isDark ? 'text-white/50 hover:text-white' : 'text-stone-500 hover:text-stone-900'

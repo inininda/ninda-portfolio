@@ -29,8 +29,8 @@ export default function ProjectPlane({ project, index, isDark = true }: ProjectP
   const label = String(index + 1).padStart(2, '0')
 
   const cardBg = isDark ? 'bg-neutral-900/90 border-blue-900/40' : 'bg-stone-100 border-stone-300'
-  const indexColor = isDark ? 'text-white/30' : 'text-stone-400'
-  const initialsColor = isDark ? 'text-white/15' : 'text-stone-300'
+  const indexColor = isDark ? 'text-white/50' : 'text-stone-400'
+  const initialsColor = isDark ? 'text-white/50' : 'text-stone-300'
 
   return (
     <>

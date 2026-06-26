@@ -23,7 +23,7 @@ export default function FilterTabs({
 }: FilterTabsProps) {
   const border = isDark ? 'border-white/10' : 'border-stone-200'
   const activeText = isDark ? 'text-white' : 'text-stone-900'
-  const mutedText = isDark ? 'text-white/40' : 'text-stone-400'
+  const mutedText = isDark ? 'text-white/50' : 'text-stone-400'
   const indicator = isDark ? 'bg-white/10' : 'bg-stone-200'
 
   return (

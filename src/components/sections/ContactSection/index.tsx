@@ -15,7 +15,7 @@ export default function ContactSection({ isDark = true }: ContactSectionProps) {
   const container = shouldReduce ? {} : staggerContainer
   const item = shouldReduce ? {} : fadeInUp
 
-  const mutedText = isDark ? 'text-white/30' : 'text-stone-400'
+  const mutedText = isDark ? 'text-white/50' : 'text-stone-400'
   const bodyText = isDark ? 'text-white/60' : 'text-stone-500'
 
   return (

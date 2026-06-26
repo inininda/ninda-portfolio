@@ -35,7 +35,7 @@ export default function AboutSection({ isDark = true }: AboutSectionProps) {
               variants={item}
               className={cn(
                 'font-mono text-xs uppercase tracking-[0.2em]',
-                isDark ? 'text-white/30' : 'text-stone-400',
+                isDark ? 'text-white/50' : 'text-stone-400',
               )}
             >
               // log.entry — deep_space

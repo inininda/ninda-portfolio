@@ -14,7 +14,7 @@ export default function Footer({ isDark = true, activeHref, onNavClick }: Footer
   const shouldReduce = useReducedMotion() ?? false
   const variant = shouldReduce ? {} : fadeIn
 
-  const mutedText = isDark ? 'text-white/30' : 'text-stone-400'
+  const mutedText = isDark ? 'text-white/50' : 'text-stone-400'
   const borderColor = isDark ? 'border-white/10' : 'border-stone-200'
   const logoColor = isDark ? 'text-white' : 'text-stone-900'
 
@@ -70,7 +70,7 @@ export default function Footer({ isDark = true, activeHref, onNavClick }: Footer
         </div>
 
         {/* Copyright */}
-        <div className={cn('pb-6 text-center font-mono text-xs', isDark ? 'text-white/20' : 'text-stone-300')}>
+        <div className={cn('pb-6 text-center font-mono text-xs', isDark ? 'text-white/50' : 'text-stone-300')}>
           © {new Date().getFullYear()} ninda. ALL SYSTEMS NOMINAL.
         </div>
       </Container>

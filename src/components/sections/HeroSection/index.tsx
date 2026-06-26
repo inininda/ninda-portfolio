@@ -35,7 +35,7 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
   const leftContainer = shouldReduce ? {} : staggerContainer
   const leftItem = shouldReduce ? {} : fadeInUp
 
-  const mutedText = isDark ? 'text-white/40' : 'text-stone-400'
+  const mutedText = isDark ? 'text-white/50' : 'text-stone-400'
 
   return (
     <section id="home" className="relative min-h-screen flex items-center">
@@ -134,10 +134,10 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
                 <SocialIconLink key={social.icon} social={social} isDark={isDark} />
               ))}
 
-              <span className={cn('ml-1 text-xs', isDark ? 'text-white/20' : 'text-stone-300')}>
+              <span className={cn('ml-1 text-xs', isDark ? 'text-white/50' : 'text-stone-300')}>
                 —
               </span>
-              <span className={cn('text-xs font-mono', isDark ? 'text-white/25' : 'text-stone-400')}>
+              <span className={cn('text-xs font-mono', isDark ? 'text-white/50' : 'text-stone-400')}>
                 let's connect
               </span>
             </motion.div>

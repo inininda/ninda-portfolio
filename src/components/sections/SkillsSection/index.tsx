@@ -42,7 +42,7 @@ export default function SkillsSection({ isDark = true }: SkillsSectionProps) {
               variants={item}
               className={cn(
                 'font-mono text-xs uppercase tracking-[0.2em]',
-                isDark ? 'text-white/30' : 'text-stone-400',
+                isDark ? 'text-white/50' : 'text-stone-400',
               )}
             >
               // sys.scan — crew_manifest

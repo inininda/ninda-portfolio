@@ -27,7 +27,7 @@ const dotDone = {
 }
 
 const dateColor = {
-  dark: 'text-white/25',
+  dark: 'text-white/50',
   light: 'text-stone-400',
 }
 
