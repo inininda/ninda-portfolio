@@ -1,6 +1,6 @@
 # Portfolio — Module Summary
 
-_Last updated: 2026-06-26_
+_Last updated: 2026-06-26 — added ExperienceSection_
 
 ## Components / Layout
 
@@ -26,6 +26,10 @@ _Last updated: 2026-06-26_
 - `PlaneGrid` — HUD wrapper (titlebar, scanlines, border glow) with a fixed-height scroll container (`screenRef`). Inside: a sticky perspective viewport (`perspective: 2000px; perspectiveOrigin: 65% 5%`) containing a `preserve-3d` planes container. All cards are absolutely positioned; each `PlaneCard` sub-component derives its 3D position (`x, y, z, rotateY`) via `useTransform(smoothProgress, …)` where `smoothProgress` is a spring over scroll-linked progress (0→numCards-1). Scrolling through creates a diagonal depth cascade (far = upper-right, near = lower-left). Mobile falls back to a flat vertical list.
 - `ProjectPlane` — Pure visual component: 320×384 portrait card with `bg-neutral-900/90` dark panel, index label, status dot, image or oversized mono initials. No click handler or motion wrapper — those live on the `PlaneCard` ancestor. Hover label (`group-hover`) appears to the right via `left-full` absolute positioning, relying on `group` from `PlaneCard`.
 - `ProjectModal` — Full detail modal: name, status badge, description, tech stack pills, asset gallery, demo/repo links; uses `Modal` shell
+- `ExperienceSection` — Mission-log work history: themed heading + vertical timeline; accepts `isDark`
+- `ExperienceTimeline` — Animated spine (`scaleY` on scroll) + stagger-mapped entries; routes to `SearchingEntry` or `ExperienceItem` per entry
+- `ExperienceItem` — Completed mission card: role, `@company` link, location, `Badge` stack pills, `>` prefixed responsibilities
+- `SearchingEntry` — Active signal card: dashed border, blinking cursor, pulsing dot, broadcasting message, open-to-work responsibilities
 
 ## Components / UI
 
@@ -52,6 +56,7 @@ _Last updated: 2026-06-26_
 - `aboutData.ts` — Journey entries (`JourneyEntry[]`), metrics (`Metric[]`), and tech stack skills (`Skill[]`) for the About section
 - `skillsData.ts` — Skill entries (`Skill[]` from `types/skills`) with proficiency values for the Skills section
 - `projectsData.ts` — 9 project entries (`Project[]`) with id, name, description, category, techStack, status, optional urls and assets
+- `experienceData.ts` — 5 work experience entries (`Experience[]`) ordered newest first; first entry is the "searching" signal
 
 ## Lib
 

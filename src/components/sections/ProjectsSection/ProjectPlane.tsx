@@ -68,7 +68,7 @@ export default function ProjectPlane({ project, index, isDark = true }: ProjectP
           `left-full` positions it just past the 320px card right edge. */}
       <div
         className={cn(
-          'pointer-events-none absolute left-full top-1/2 flex -translate-y-1/2 items-center gap-2 pl-3',
+          'pointer-events-none absolute left-full top-1/2 hidden -translate-y-1/2 items-center gap-2 pl-3 lg:flex',
           'opacity-0 transition-opacity duration-300 group-hover:opacity-100',
         )}
       >

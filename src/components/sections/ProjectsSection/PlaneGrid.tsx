@@ -282,7 +282,7 @@ export default function PlaneGrid({ projects, onSelectProject, isDark = true }: 
           diagonally from lower-left (near) to upper-right (far).
         */}
         <div
-          className="h-full w-full"
+          className="h-full w-full overflow-hidden"
           style={{ perspective: '2000px', perspectiveOrigin: '78% 2%' }}
         >
           {/*

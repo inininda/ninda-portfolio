@@ -1,0 +1,82 @@
+// Static work experience entries for the Experience section — ordered newest first
+import type { Experience } from '@/types/experience'
+
+export const experienceData: Experience[] = [
+  {
+    id: 'searching',
+    role: 'Searching for Next Mission',
+    company: '',
+    startDate: '2025',
+    endDate: 'present',
+    isSearching: true,
+    stack: [],
+    responsibilities: [
+      'Open to fulltime and contract roles',
+      'Fullstack + Web3 focus',
+      'Remote or hybrid',
+    ],
+  },
+  {
+    id: 'euge-holdings',
+    role: 'Senior Fullstack Engineer',
+    company: 'Euge Holdings',
+    companyUrl: 'https://eugeholdings.com',
+    startDate: '2023',
+    endDate: '2025',
+    isSearching: false,
+    stack: ['React', 'NestJS', 'Supabase', 'Solidity', 'Web3.js'],
+    responsibilities: [
+      'Built AI-integrated payment gateway handling 50k+ transactions monthly',
+      'Led cross-chain token bridge development using LayerZero protocol',
+      'Architected multi-tenant SaaS platform with RBAC and audit logging',
+      'Mentored two junior engineers and introduced code review process',
+    ],
+    location: 'Remote',
+  },
+  {
+    id: 'buildlab-studio',
+    role: 'Fullstack Engineer',
+    company: 'BuildLab Studio',
+    companyUrl: 'https://buildlab.studio',
+    startDate: '2022',
+    endDate: '2023',
+    isSearching: false,
+    stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'AWS'],
+    responsibilities: [
+      'Delivered 6 client products end-to-end from design handoff to deployment',
+      'Migrated monolithic Rails app to Next.js + headless CMS, reducing TTI by 60%',
+      'Designed GraphQL API layer consumed by web and mobile clients',
+    ],
+    location: 'Hybrid — Jakarta',
+  },
+  {
+    id: 'novatech-digital',
+    role: 'Frontend Developer',
+    company: 'NovaTech Digital',
+    companyUrl: 'https://novatech.id',
+    startDate: '2021',
+    endDate: '2022',
+    isSearching: false,
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Figma'],
+    responsibilities: [
+      'Implemented pixel-perfect UI from Figma specs across 4 enterprise dashboards',
+      'Introduced component library reducing design-to-code cycle by 35%',
+      'Integrated third-party analytics, charting, and notification services',
+    ],
+    location: 'Jakarta',
+  },
+  {
+    id: 'craftwork-agency',
+    role: 'Junior Developer',
+    company: 'Craftwork Agency',
+    startDate: '2020',
+    endDate: '2021',
+    isSearching: false,
+    stack: ['Vue.js', 'Laravel', 'MySQL', 'Docker'],
+    responsibilities: [
+      'Built and maintained client marketing sites and e-commerce storefronts',
+      'Developed RESTful API endpoints for mobile app team consumption',
+    ],
+    location: 'Jakarta',
+  },
+]

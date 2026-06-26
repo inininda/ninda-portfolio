@@ -26,7 +26,7 @@ export default function SkillsSection({ isDark = true }: SkillsSectionProps) {
   )
 
   return (
-    <section id="skills" className="py-20 md:py-32">
+    <section id="skills" className="py-20 md:py-32 overflow-hidden">
       <Container>
         <div className="flex flex-col gap-16">
 
