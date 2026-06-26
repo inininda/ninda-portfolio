@@ -1,6 +1,6 @@
 # Portfolio — Module Summary
 
-_Last updated: 2026-06-25_
+_Last updated: 2026-06-26_
 
 ## Components / Layout
 
@@ -22,9 +22,16 @@ _Last updated: 2026-06-25_
 - `SkillsSection` — Single-column skills section with CSS grid texture; heading → 2×2 group grid; accepts `isDark`
 - `SkillGroup` — One category block: `[ LABEL ] ───` header + list of `SkillBar`; accepts group, skills, isDark
 - `SkillBar` — Single skill diagnostic row: mono name + segmented animated bar + count-up %; goes in `ui/`
+- `ProjectsSection` — Full-width diagonal cascade project grid with HUD wrapper, filter tabs, and project modal; accepts `isDark`
+- `PlaneGrid` — HUD wrapper (titlebar, scanlines, border glow) with a fixed-height scroll container (`screenRef`). Inside: a sticky perspective viewport (`perspective: 2000px; perspectiveOrigin: 65% 5%`) containing a `preserve-3d` planes container. All cards are absolutely positioned; each `PlaneCard` sub-component derives its 3D position (`x, y, z, rotateY`) via `useTransform(smoothProgress, …)` where `smoothProgress` is a spring over scroll-linked progress (0→numCards-1). Scrolling through creates a diagonal depth cascade (far = upper-right, near = lower-left). Mobile falls back to a flat vertical list.
+- `ProjectPlane` — Pure visual component: 320×384 portrait card with `bg-neutral-900/90` dark panel, index label, status dot, image or oversized mono initials. No click handler or motion wrapper — those live on the `PlaneCard` ancestor. Hover label (`group-hover`) appears to the right via `left-full` absolute positioning, relying on `group` from `PlaneCard`.
+- `ProjectModal` — Full detail modal: name, status badge, description, tech stack pills, asset gallery, demo/repo links; uses `Modal` shell
 
 ## Components / UI
 
+- `Modal` — Accessible dialog shell: animated backdrop + scale/fade panel, focus trap, Escape close
+- `StatusBadge` — `live` / `in-progress` / `archived` pill with pulsing/blinking/static dot
+- `FilterTabs` — Reusable tab bar with spring-animated sliding indicator via `layoutId`
 - `Button` — Polymorphic primary/outline button; `as` prop switches between `<button>` and `<a>`
 - `ThemeToggle` — Dark/light toggle button; `showLabel` prop controls whether mode label is shown
 - `TerminalWindow` — macOS-style terminal chrome (dots, title bar, dark wrapper); children-based
@@ -44,8 +51,9 @@ _Last updated: 2026-06-25_
 - `socialData.ts` — Social links (`label`, `href`, `icon`) for hero and footer
 - `aboutData.ts` — Journey entries (`JourneyEntry[]`), metrics (`Metric[]`), and tech stack skills (`Skill[]`) for the About section
 - `skillsData.ts` — Skill entries (`Skill[]` from `types/skills`) with proficiency values for the Skills section
+- `projectsData.ts` — 9 project entries (`Project[]`) with id, name, description, category, techStack, status, optional urls and assets
 
 ## Lib
 
-- `motion.ts` — Shared animation variants: `fadeIn`, `fadeInUp`, `staggerContainer`, `slideInLeft`, `slideInRight`, `scaleIn`, `overlayVariants`, `sidebarVariants`, `sidebarStagger`, `sidebarItemVariants`
+- `motion.ts` — Shared animation variants: `fadeIn`, `fadeInUp`, `staggerContainer`, `slideInLeft`, `slideInRight`, `scaleIn` (with exit), `overlayVariants`, `modalPanelVariants`, `sidebarVariants`, `sidebarStagger`, `sidebarItemVariants`
 - `utils.ts` — `cn()` helper for merging Tailwind class strings

@@ -28,6 +28,14 @@ export const slideInRight: Variants = {
 export const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.92 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+  exit: { opacity: 0, scale: 0.92, transition: { duration: 0.2, ease: 'easeIn' } },
+}
+
+// Modal panel scale+fade — used with AnimatePresence in Modal.tsx
+export const modalPanelVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.22, ease: 'easeOut' } },
+  exit: { opacity: 0, scale: 0.95, transition: { duration: 0.18, ease: 'easeIn' } },
 }
 
 // Variants for backdrop overlays used with AnimatePresence
