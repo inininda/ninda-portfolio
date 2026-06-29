@@ -30,7 +30,7 @@ export default function SearchingEntry({ entry, isDark }: SearchingEntryProps) {
         <motion.span
           className="ml-0.5 text-cyan-400"
           animate={{ opacity: [1, 0, 1] }}
-          transition={{ duration: 1.1, repeat: Infinity, ease: 'steps(1)' }}
+          transition={{ duration: 1.1, repeat: Infinity, ease: 'linear' }}
         >
           _
         </motion.span>
