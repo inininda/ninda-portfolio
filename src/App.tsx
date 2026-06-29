@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, useTransform } from 'motion/react'
 import StarCanvas from './StarCanvas'
+import { scrollToSection } from '@/lib/scroll'
 import Navbar from '@/components/layout/Navbar'
 import HeroSection from '@/components/sections/HeroSection'
 import AboutSection from '@/components/sections/AboutSection'
@@ -46,8 +47,8 @@ function App() {
   }
 
   function handleViewWork() {
-    setActiveHref('#works')
-    document.querySelector('#works')?.scrollIntoView({ behavior: 'smooth' })
+    setActiveHref('#projects')
+    scrollToSection('#projects')
   }
 
   return (

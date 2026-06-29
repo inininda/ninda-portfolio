@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'motion/react'
 import { fadeIn } from '@/lib/motion'
 import { cn } from '@/lib/utils'
+import { scrollToSection } from '@/lib/scroll'
 import Container from '@/components/layout/Container'
 import { navData } from '@/data/navData'
 
@@ -33,7 +34,7 @@ export default function Footer({ isDark = true, activeHref, onNavClick }: Footer
           <div className="flex flex-col gap-1">
             <a
               href="#home"
-              onClick={() => onNavClick?.('#home')}
+              onClick={(e) => { e.preventDefault(); onNavClick?.('#home'); scrollToSection('#home') }}
               className={cn(
                 'text-xl font-bold tracking-tight transition-opacity duration-200 hover:opacity-70',
                 logoColor,
@@ -52,7 +53,7 @@ export default function Footer({ isDark = true, activeHref, onNavClick }: Footer
               <a
                 key={item.href}
                 href={item.href}
-                onClick={() => onNavClick?.(item.href)}
+                onClick={(e) => { e.preventDefault(); onNavClick?.(item.href); scrollToSection(item.href) }}
                 className={cn(
                   'font-mono text-xs tracking-wide transition-opacity duration-200',
                   activeHref === item.href

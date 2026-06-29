@@ -121,7 +121,7 @@ export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
                 View Work <span aria-hidden="true">→</span>
               </Button>
 
-              <Button as="a" variant="outline" isDark={isDark} href="/ninda-mawarni-resume.pdf.pdf" download>
+              <Button as="a" variant="outline" isDark={isDark} href="/ninda-mawarni-resume.pdf" download>
                 Download CV <span aria-hidden="true">↓</span>
               </Button>
             </motion.div>

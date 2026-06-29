@@ -18,7 +18,7 @@ export default function NavLinks({ isDark, activeHref, onNavClick, className }: 
         <a
           key={item.href}
           href={item.href}
-          onClick={() => onNavClick(item.href)}
+          onClick={(e) => { e.preventDefault(); onNavClick(item.href) }}
           className={cn(
             'relative text-sm font-medium py-1 transition-colors duration-200 group',
             activeHref === item.href ? activeTextColor : textColor,

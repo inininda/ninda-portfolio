@@ -34,7 +34,7 @@ function SidebarNavLinks({ isDark, activeHref, onNavClick }: SidebarNavLinksProp
           key={item.href}
           href={item.href}
           variants={shouldReduce ? {} : sidebarItemVariants}
-          onClick={() => onNavClick(item.href)}
+          onClick={(e) => { e.preventDefault(); onNavClick(item.href) }}
           className={cn(
             'text-base font-medium py-3.5 border-b transition-colors duration-200',
             isDark ? 'border-white/10' : 'border-stone-300/40',

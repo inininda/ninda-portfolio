@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { navData } from '@/data/navData'
 import { cn } from '@/lib/utils'
+import { scrollToSection } from '@/lib/scroll'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import Container from '@/components/layout/Container'
 import ThemeToggle from '@/components/ui/ThemeToggle'
@@ -53,6 +54,7 @@ export default function Navbar({ isDark, onToggleTheme, activeHref, onSetActive 
   function handleNavClick(href: string) {
     onSetActive(href)
     setIsSidebarOpen(false)
+    scrollToSection(href)
   }
 
   const logoColor = isDark ? 'text-white' : 'text-stone-700'
@@ -73,7 +75,7 @@ export default function Navbar({ isDark, onToggleTheme, activeHref, onSetActive 
           <div className="flex items-center justify-between h-16">
             <a
               href="#home"
-              onClick={() => handleNavClick('#home')}
+              onClick={(e) => { e.preventDefault(); handleNavClick('#home') }}
               className={cn(
                 'text-xl font-bold tracking-tight transition-opacity duration-200 hover:opacity-75',
                 logoColor
