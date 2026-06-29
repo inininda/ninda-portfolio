@@ -59,7 +59,7 @@ export default function Modal({ isOpen, onClose, children, className }: ModalPro
     <AnimatePresence>
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8 sm:py-10"
           role="dialog"
           aria-modal="true"
         >

@@ -24,7 +24,7 @@ export default function ProjectModal({ project, onClose, isDark = true }: Projec
   return (
     <Modal isOpen={project !== null} onClose={onClose}>
       {project && (
-        <div className="flex flex-col gap-6 p-6">
+        <div className="flex flex-col gap-6 px-6 py-8 sm:px-8 sm:py-10">
           {/* Header */}
           <div className="flex items-start justify-between gap-4">
             <div className="flex flex-col gap-2">
