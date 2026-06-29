@@ -28,6 +28,7 @@ const terminalLines: TerminalLine[] = [
   { type: 'kv', key: 'role  ', val: '"Fullstack Web3 & AI Engineer"' },
   { type: 'kv', key: 'status', val: '"Open to opportunities"' },
   { type: 'kv', key: 'based ', val: '"Indonesia"' },
+  { type: 'kv', key: 'avail ', val: '"Remote" or "On-site"' },
 ]
 
 export default function HeroSection({ isDark, onViewWork }: HeroSectionProps) {
