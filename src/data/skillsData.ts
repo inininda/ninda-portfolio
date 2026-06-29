@@ -1,5 +1,5 @@
-// Static skill entries for the Skills section: name, category group, and proficiency (0–100)
-import type { Skill } from '@/types/skills'
+// Static skill entries and certifications for the Skills section
+import type { Skill, Certification } from '@/types/skills'
 
 export const skillsData: Skill[] = [
   // Frontend Development
@@ -92,4 +92,12 @@ export const skillsData: Skill[] = [
   // AI Tools
   { name: 'Claude Code', group: 'aitools', proficiency: 85 },
   { name: 'Windsurf', group: 'aitools', proficiency: 90 },
+]
+
+export const certificationsData: Certification[] = [
+  { name: 'The Git & Github Bootcamp', issuer: 'Udemy', year: 2026 },
+  { name: 'React - The Complete Guide (incl. Next.js, Redux)', issuer: 'Udemy', year: 2026 },
+  { name: 'JavaScript - The Complete Guide (Beginner + Advanced)', issuer: 'Udemy', year: 2026 },
+  { name: 'JavaScript Programming Essentials', issuer: 'IBM', year: 2026 },
+  { name: 'Introduction to Software Engineering', issuer: 'IBM', year: 2026 },
 ]
