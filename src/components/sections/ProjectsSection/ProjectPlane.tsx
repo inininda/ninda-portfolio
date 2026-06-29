@@ -49,9 +49,9 @@ export default function ProjectPlane({ project, index, isDark = true }: ProjectP
           )}
         />
 
-        {project.assets?.[0] ? (
+        {project.cover ? (
           <img
-            src={`/projects/${project.assets[0]}`}
+            src={project.cover}
             alt={project.name}
             className="h-full w-full object-cover"
           />

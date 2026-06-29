@@ -5,10 +5,17 @@ import SkillBar from '@/components/ui/SkillBar'
 import { cn } from '@/lib/utils'
 
 const GROUP_LABELS: Record<SkillGroupType, string> = {
-  fullstack: 'fullstack',
-  web3: 'web3',
-  devops: 'devops',
-  tools: 'tools',
+  frontend:     'frontend',
+  mobile:       'mobile',
+  backend:      'backend',
+  databases:    'databases',
+  blockchain:   'blockchain & web3',
+  testing:      'testing',
+  build:        'build & tooling',
+  state:        'state management',
+  professional: 'professional',
+  ai:           'ai engineering',
+  aitools:      'ai tools',
 }
 
 interface SkillGroupProps {

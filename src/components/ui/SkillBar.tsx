@@ -5,17 +5,31 @@ import { cn } from '@/lib/utils'
 
 // Neon fill and dim track colors per group
 const GROUP_FILL: Record<SkillGroup, string> = {
-  fullstack: 'rgba(34,211,238,1)',
-  web3: 'rgba(74,222,128,1)',
-  devops: 'rgba(251,146,60,1)',
-  tools: 'rgba(167,139,250,1)',
+  frontend:     'rgba(34,211,238,1)',
+  mobile:       'rgba(244,114,182,1)',
+  backend:      'rgba(74,222,128,1)',
+  databases:    'rgba(251,146,60,1)',
+  blockchain:   'rgba(167,139,250,1)',
+  testing:      'rgba(248,113,113,1)',
+  build:        'rgba(250,204,21,1)',
+  state:        'rgba(129,140,248,1)',
+  professional: 'rgba(45,212,191,1)',
+  ai:           'rgba(192,132,252,1)',
+  aitools:      'rgba(56,189,248,1)',
 }
 
 const GROUP_TRACK: Record<SkillGroup, string> = {
-  fullstack: 'rgba(34,211,238,0.12)',
-  web3: 'rgba(74,222,128,0.12)',
-  devops: 'rgba(251,146,60,0.12)',
-  tools: 'rgba(167,139,250,0.12)',
+  frontend:     'rgba(34,211,238,0.12)',
+  mobile:       'rgba(244,114,182,0.12)',
+  backend:      'rgba(74,222,128,0.12)',
+  databases:    'rgba(251,146,60,0.12)',
+  blockchain:   'rgba(167,139,250,0.12)',
+  testing:      'rgba(248,113,113,0.12)',
+  build:        'rgba(250,204,21,0.12)',
+  state:        'rgba(129,140,248,0.12)',
+  professional: 'rgba(45,212,191,0.12)',
+  ai:           'rgba(192,132,252,0.12)',
+  aitools:      'rgba(56,189,248,0.12)',
 }
 
 interface SkillBarProps {

@@ -72,12 +72,46 @@ export default function ProjectModal({ project, onClose, isDark = true }: Projec
                 {project.assets.map((asset) => (
                   <img
                     key={asset}
-                    src={`/projects/${asset}`}
+                    src={`${asset}`}
                     alt={`${project.name} screenshot`}
                     className="h-32 w-auto shrink-0 rounded-lg object-cover"
                   />
                 ))}
               </div>
+            </div>
+          )}
+
+          {/* Challenges */}
+          {project.challenges && project.challenges.length > 0 && (
+            <div className="flex flex-col gap-2">
+              <span className={cn('font-mono text-xs uppercase tracking-widest', labelText)}>
+                // challenges
+              </span>
+              <ul className="flex flex-col gap-1.5">
+                {project.challenges.map((c, i) => (
+                  <li key={i} className={cn('flex gap-2 text-sm leading-relaxed', bodyText)}>
+                    <span className="mt-0.5 shrink-0 text-rose-400">▸</span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Achievements */}
+          {project.achievements && project.achievements.length > 0 && (
+            <div className="flex flex-col gap-2">
+              <span className={cn('font-mono text-xs uppercase tracking-widest', labelText)}>
+                // achievements
+              </span>
+              <ul className="flex flex-col gap-1.5">
+                {project.achievements.map((a, i) => (
+                  <li key={i} className={cn('flex gap-2 text-sm leading-relaxed', bodyText)}>
+                    <span className="mt-0.5 shrink-0 text-teal-400">✓</span>
+                    {a}
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 

@@ -6,7 +6,11 @@ import type { SkillGroup as SkillGroupType } from '@/types/skills'
 import { cn } from '@/lib/utils'
 import SkillGroup from './SkillGroup'
 
-const GROUP_ORDER: SkillGroupType[] = ['fullstack', 'web3', 'devops', 'tools']
+const GROUP_ORDER: SkillGroupType[] = [
+  'frontend', 'mobile', 'backend', 'databases',
+  'blockchain', 'testing', 'build', 'state',
+  'professional', 'ai', 'aitools',
+]
 
 interface SkillsSectionProps {
   isDark?: boolean
@@ -22,7 +26,7 @@ export default function SkillsSection({ isDark = true }: SkillsSectionProps) {
       acc[g] = skillsData.filter((s) => s.group === g)
       return acc
     },
-    { fullstack: [], web3: [], devops: [], tools: [] },
+    { frontend: [], mobile: [], backend: [], databases: [], blockchain: [], testing: [], build: [], state: [], professional: [], ai: [], aitools: [] },
   )
 
   return (

@@ -1,4 +1,15 @@
-export type SkillGroup = 'fullstack' | 'web3' | 'devops' | 'tools'
+export type SkillGroup =
+  | 'frontend'
+  | 'mobile'
+  | 'backend'
+  | 'databases'
+  | 'blockchain'
+  | 'testing'
+  | 'build'
+  | 'state'
+  | 'professional'
+  | 'ai'
+  | 'aitools'
 
 export interface Skill {
   name: string

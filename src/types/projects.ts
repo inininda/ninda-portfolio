@@ -1,4 +1,4 @@
-export type ProjectCategory = 'web-app' | 'web3' | 'smart-contract' | 'other'
+export type ProjectCategory = 'web-app' | 'web3' | 'smart-contract' | 'other' | 'ai'
 
 export type ProjectStatus = 'live' | 'in-progress' | 'archived'
 
@@ -11,6 +11,9 @@ export interface Project {
   status: ProjectStatus
   demoUrl?: string
   githubUrl?: string
-  assets?: string[]
+  assets?: string[],
+  cover?: string,
   featured: boolean
+  challenges?: string[]
+  achievements?: string[]
 }
