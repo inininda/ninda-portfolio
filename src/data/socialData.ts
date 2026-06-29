@@ -8,18 +8,13 @@ export interface SocialLink {
 export const socialData: SocialLink[] = [
   {
     label: 'GitHub',
-    href: 'https://github.com/nindamawarni-euge',
+    href: 'https://github.com/inininda',
     icon: 'github',
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/nindamawarni',
+    href: 'https://www.linkedin.com/in/ninda-mawarni-it/',
     icon: 'linkedin',
-  },
-  {
-    label: 'Twitter',
-    href: 'https://twitter.com/nindamawarni',
-    icon: 'twitter',
   },
   {
     label: 'Email',
